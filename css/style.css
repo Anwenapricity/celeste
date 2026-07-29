@@ -679,6 +679,41 @@ footer {
     }
 }
 
+/* 鼠标光晕 */
+.cursor-glow {
+    --cursor-x: -100px;
+    --cursor-y: -100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(calc(var(--cursor-x) - 50%), calc(var(--cursor-y) - 50%));
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.26) 0%, rgba(108, 99, 255, 0.1) 38%, transparent 70%);
+    filter: blur(4px);
+    transition: opacity 180ms ease;
+    z-index: 999;
+}
+
+.cursor-glow.is-visible {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-glow {
+        display: none;
+    }
+}
+
+@media (pointer: coarse) {
+    .cursor-glow {
+        display: none;
+    }
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .hero-text h1 {

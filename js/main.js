@@ -48,3 +48,30 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
 });
+
+// 鼠标光晕
+const cursorGlow = document.querySelector('.cursor-glow');
+const supportsCursorGlow = window.matchMedia('(pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (cursorGlow && supportsCursorGlow) {
+    let pointerX = -100;
+    let pointerY = -100;
+    let frameId;
+
+    window.addEventListener('pointermove', (event) => {
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        cursorGlow.classList.add('is-visible');
+
+        if (!frameId) {
+            frameId = window.requestAnimationFrame(() => {
+                cursorGlow.style.setProperty('--cursor-x', `${pointerX}px`);
+                cursorGlow.style.setProperty('--cursor-y', `${pointerY}px`);
+                frameId = undefined;
+            });
+        }
+    });
+
+    document.addEventListener('mouseleave', () => cursorGlow.classList.remove('is-visible'));
+}
