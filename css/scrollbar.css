@@ -1,0 +1,34 @@
+/* Native scrollbar: transparent track, animated thumb color, no layout shift. */
+@property --scrollbar-thumb-color {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(185, 188, 198, 0.24);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) transparent;
+    transition: --scrollbar-thumb-color 400ms ease;
+}
+
+html.scrollbar-enhanced { --scrollbar-thumb-color: transparent; }
+html.scrollbar-enhanced.is-scrolling { --scrollbar-thumb-color: rgba(185, 188, 198, 0.24); }
+html.scrollbar-enhanced.is-scrollbar-hover { --scrollbar-thumb-color: rgba(185, 188, 198, 0.4); }
+
+@supports selector(::-webkit-scrollbar) {
+    html { scrollbar-width: auto; scrollbar-color: auto; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: transparent; }
+    ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-color);
+        border-radius: 8px;
+        border: 1px solid transparent;
+        background-clip: padding-box;
+    }
+}
+
+@media (forced-colors: active) {
+    html { scrollbar-color: auto; scrollbar-width: auto; }
+    ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover { background: CanvasText; }
+}
+

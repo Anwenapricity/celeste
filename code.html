@@ -3,42 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celeste 的个人主页。用算法理解世界，用镜头记录世界，探索计算机视觉与摄影创作。">
+    <link rel="preload" as="image" href="images/hero/celeste-mountain-concept-v1.png">
     <title>个人主页 | Celeste</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editorial.css">
+    <link rel="stylesheet" href="css/projects.css?v=3">
+    <link rel="stylesheet" href="css/scrollbar.css?v=2">
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav>
+    <nav aria-label="主导航">
         <div class="container">
-            <a href="#" class="logo">Celeste</a>
+            <a href="#home" class="logo" aria-label="Celeste 首页">Celeste<span class="logo-dot">.</span></a>
             <div class="nav-links">
                 <a href="#about">关于我</a>
-                <a href="#skills">技能</a>
-                <a href="#projects">项目</a>
-                <a href="#channels">频道</a>
+                <a href="#projects">算法项目</a>
+                <a href="#photography">摄影作品</a>
                 <a href="#contact">联系我</a>
             </div>
         </div>
     </nav>
 
     <!-- 英雄区域 -->
-    <section class="hero">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <img class="hero-backdrop" src="images/hero/celeste-mountain-concept-v1.png" alt="" fetchpriority="high" width="1672" height="941">
         <div class="container">
             <div class="hero-content">
+                <figure class="hero-portrait">
+                    <div class="hero-portrait-frame">
+                        <img src="images/avatar.jpg" alt="Celeste 的个人头像" width="3474" height="3474" decoding="async">
+                    </div>
+                    <figcaption>CELESTE <span>代码与光影之间</span></figcaption>
+                </figure>
                 <div class="hero-text">
-                    <h1>Celeste</h1>
-                    <h2>算法工程师 & AIGC创作者</h2>
-                    <p>深耕CV算法模型开发与AI创作，痴迷打磨流畅智能交互体验，聚焦算法优化、生成式应用研发与产品交互落地，擅长拆解复杂模型逻辑，交付轻量化、高可用的工程方案。</p>
-                    <a href="#projects" class="btn btn-outline">查看作品</a>
-                    <a href="#contact" class="btn btn-outline">联系我</a>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-image">
-                        <img src="avatar.jpg" alt="Celeste">
+                    <p class="hero-eyebrow">COMPUTER VISION & PHOTOGRAPHY</p>
+                    <h1 id="hero-title">Celeste<span>.</span></h1>
+                    <h2>用算法理解世界，<br>用镜头记录世界。</h2>
+                    <p class="hero-description">算法工程师 & 摄影师<br>在代码与光影之间，探索视觉的更多可能。</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="hero-link">探索算法项目 <span aria-hidden="true">↗</span></a>
+                        <a href="#photography" class="hero-link">浏览摄影作品 <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="hero-footnote container">
+            <a href="#about" class="hero-scroll"><span aria-hidden="true">↓</span> 向下探索</a>
+            <span class="hero-image-note">山海之间 <span aria-hidden="true">/</span> AI 概念影像</span>
         </div>
     </section>
 
@@ -50,9 +63,9 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>你好！我是Celeste，一名充满激情的全栈开发工程师，拥有5年的Web开发经验。我热爱编程，尤其喜欢探索新技术并将其实应用于项目中。</p>
-                    <p>我的设计理念是"简约而不简单"。我相信好的设计不仅要美观，更要实用，能够解决用户的实际问题。</p>
-                    <p>在工作之余，我喜欢摄影、旅行和阅读。这些爱好不仅丰富了我的生活，也为我的创作工作带来了无限灵感。</p>
+                    <p>你好！我是Celeste，一名算法工程师，同时也是一名热爱光影的摄影师。拥有5年的计算机视觉算法开发经验，痴迷于用代码和镜头两种方式探索视觉世界的美。</p>
+                    <p>我的创作理念是"技术为艺术赋能"。我相信好的摄影作品不仅要有精湛的技术把控，更要有打动人心的情感表达，能够用光影讲述独特的故事。</p>
+                    <p>在工作之余，我喜欢旅行、阅读和尝试新的摄影风格。这些经历不仅丰富了我的生活，也为我的算法研究和摄影创作带来了源源不断的灵感。</p>
                     <a href="#" class="btn">下载简历</a>
                 </div>
                 <div class="about-stats">
@@ -119,13 +132,13 @@
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3><i class="fas fa-wand-magic-sparkles"></i> AIGC 创作</h3>
+                    <h3><i class="fas fa-camera"></i> 摄影创作</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Stable Diffusion</li>
-                        <li><i class="fas fa-check-circle"></i> ComfyUI</li>
-                        <li><i class="fas fa-check-circle"></i> LoRA 微调</li>
-                        <li><i class="fas fa-check-circle"></i> 提示词设计</li>
-                        <li><i class="fas fa-check-circle"></i> 图生视频</li>
+                        <li><i class="fas fa-check-circle"></i> 人像摄影</li>
+                        <li><i class="fas fa-check-circle"></i> 风光摄影</li>
+                        <li><i class="fas fa-check-circle"></i> 后期修图</li>
+                        <li><i class="fas fa-check-circle"></i> 构图与光影</li>
+                        <li><i class="fas fa-check-circle"></i> 视频拍摄</li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -142,25 +155,85 @@
         </div>
     </section>
 
-    <!-- 项目部分 -->
-    <section id="projects">
+    <!-- 算法项目：当前使用概念素材，后续替换为真实项目 -->
+    <section id="projects" class="work-section" aria-labelledby="work-title">
         <div class="container">
-            <div class="section-title">
-                <h2>精选项目</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/object-detection-cover.png" alt="目标检测算法项目封面">
+            <header class="work-heading">
+                <div>
+                    <p class="work-kicker">SELECTED EXPLORATIONS / 01—02</p>
+                    <h2 id="work-title">让视觉，被理解。</h2>
+                </div>
+                <p>算法探索 · Computer Vision<br>从识别画面中的目标，到看清被忽略的细节。</p>
+            </header>
+            <article class="work-case" aria-labelledby="detection-title">
+                <div class="work-media">
+                    <figure class="work-visual">
+                        <img src="images/projects/detection-editorial-v1.png" alt="雨后城市街道中的汽车与行人，叠加手工绘制的目标检测示意框" width="1536" height="1024" loading="lazy">
+                        <figcaption>OBJECT DETECTION / CONCEPT</figcaption>
+                        <div class="detection-box detection-car" data-label="CAR" aria-hidden="true"></div>
+                        <div class="detection-box detection-person-one" data-label="PERSON" aria-hidden="true"></div>
+                        <div class="detection-box detection-person-two" data-label="PERSON" aria-hidden="true"></div>
+                        <div class="detection-box detection-car-back" data-label="CAR" aria-hidden="true"></div>
+                    </figure>
+                    <div class="work-toolbar">
+                        <span>城市街景 · AI 概念影像</span>
+                        <label><input class="detection-toggle" type="checkbox" checked>显示检测框示意</label>
+                    </div>
+                </div>
+                <div class="work-copy">
+                    <p class="work-number"><span>01</span> PERCEPTION</p>
+                    <h3 id="detection-title">从像素，到感知。</h3>
+                    <p class="work-description">目标检测 / Object Detection<br>在复杂的街景中定位车辆与行人，让画面中的目标拥有清晰的边界。探索场景理解与视觉感知的表达方式。</p>
+                    <ul class="work-tags" aria-label="相关技术"><li>Python</li><li>PyTorch</li><li>YOLO</li><li>OpenCV</li></ul>
+                    <details class="work-details">
+                        <summary>关于这项探索</summary>
+                        <p>关注目标定位、类别识别与检测结果的可视化。当前画面使用 AI 生成街景，边框为手工布置的视觉示意；真实模型结果与项目资料将在后续补充。</p>
+                    </details>
+                </div>
+            </article>
+            <article class="work-case work-case-reverse" aria-labelledby="resolution-title">
+                <div class="work-media">
+                    <figure class="work-visual comparison">
+                        <img src="images/projects/texture-editorial-v1.png" alt="木质建筑与瓦片的清晰纹理，作为清晰度对比概念素材" width="1536" height="1024" loading="lazy">
+                        <div class="compare-soft" aria-hidden="true"><img src="images/projects/texture-editorial-v1.png" alt="" width="1536" height="1024" loading="lazy"></div>
+                        <figcaption>IMAGE RESTORATION / CONCEPT</figcaption>
+                        <span class="compare-label compare-label-before">柔化示意</span>
+                        <span class="compare-label compare-label-after">清晰素材</span>
+                        <span class="compare-line" aria-hidden="true"></span>
+                        <input class="compare-control" type="range" min="0" max="100" step="any" value="50" aria-label="调整清晰度对比位置" aria-describedby="comparison-note">
+                    </figure>
+                    <div class="work-toolbar"><span>建筑细节 · AI 概念影像</span><span>↔ 拖动分界线，探索细节</span></div>
+                </div>
+                <div class="work-copy">
+                    <p class="work-number"><span>02</span> RESTORATION</p>
+                    <h3 id="resolution-title">让细节，重新浮现。</h3>
+                    <p class="work-description">图像超分辨率 / Super Resolution<br>从屋檐的轮廓，到木纹的肌理，关注图像中的微小细节。探索清晰度、纹理与视觉观感之间的关系。</p>
+                    <ul class="work-tags" aria-label="相关技术"><li>PyTorch</li><li>ESRGAN</li><li>Image Processing</li></ul>
+                    <details class="work-details">
+                        <summary>关于这项探索</summary>
+                        <p id="comparison-note">当前对比由同一张 AI 概念图及其柔化版本构成，仅用于展示交互与视觉风格，并非模型重建结果。可拖动分界线，或聚焦画面后使用方向键调整。</p>
+                    </details>
+                </div>
+            </article>
+            <p class="work-note">概念展示 / 图片由 AI 生成，检测框与清晰度对比均为视觉示意。真实项目成果待补充。</p>
+        </div>
+    </section>
+
+    <section id="photography" aria-label="摄影作品集">
+        <div class="container">
+                <div class="project-card photo-holding">
+                    <div class="project-image photography-placeholder">
+                        <span>PHOTOGRAPHY</span>
+                        <small>摄影作品集 · 即将呈现</small>
                     </div>
                     <div class="project-content">
-                        <h3>目标检测算法</h3>
-                        <p>基于深度学习的实时目标检测方案，完成多目标识别、检测框可视化与推理性能优化。</p>
+                        <h3>摄影作品集</h3>
+                        <p>人像与风光摄影作品合集，涵盖构图、光影把控与后期调色的完整创作流程展示。</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">YOLO</span>
-                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Lightroom</span>
+                            <span class="tech-tag">Photoshop</span>
+                            <span class="tech-tag">人像修图</span>
+                            <span class="tech-tag">风光摄影</span>
                         </div>
                         <div class="project-links">
                             <a href="#"><i class="fas fa-external-link-alt"></i> 预览</a>
@@ -168,45 +241,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/super-resolution-cover.png" alt="图像超分辨率重建项目封面">
-                    </div>
-                    <div class="project-content">
-                        <h3>图像超分辨率重建</h3>
-                        <p>面向低清图像的超分辨率重建方案，提升画面清晰度、纹理细节与视觉观感。</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">ESRGAN</span>
-                            <span class="tech-tag">OpenCV</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 预览</a>
-                            <a href="#"><i class="fab fa-github"></i> 代码</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/honkai-star-rail-aigc-cover.png" alt="AIGC 崩坏星穹铁道小视频项目封面">
-                    </div>
-                    <div class="project-content">
-                        <h3>《崩坏:星穹铁道》视频</h3>
-                        <p>围绕星穹铁道主题完成角色视觉、镜头分镜与短视频生成的 AIGC 创作实践。</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Diffusion</span>
-                            <span class="tech-tag">ComfyUI</span>
-                            <span class="tech-tag">LoRA</span>
-                            <span class="tech-tag">视频生成</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 预览</a>
-                            <a href="#"><i class="fab fa-github"></i> 代码</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -223,7 +257,7 @@
                     </div>
                     <div class="channel-content">
                         <h3>抖音</h3>
-                        <p>分享AI创作过程与技术干货短视频</p>
+                        <p>分享摄影技巧与后期修图短视频</p>
                         <a href="https://www.douyin.com/user/MS4wLjABAAAAw6_Jq4rDqlUKujFUvw0mjwTE8Y4uYuqJoKIQWO43oBYTd5_FlhU3qZ-PbOS7MP35?from_tab_name=main" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -233,7 +267,7 @@
                     </div>
                     <div class="channel-content">
                         <h3>哔哩哔哩</h3>
-                        <p>深度技术教程与项目实战完整视频</p>
+                        <p>摄影教程与作品完整创作流程</p>
                         <a href="https://space.bilibili.com/1340190821" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -243,7 +277,7 @@
                     </div>
                     <div class="channel-content">
                         <h3>小红书</h3>
-                        <p>AIGC作品展示与创作心得图文分享</p>
+                        <p>摄影作品展示与创作心得图文分享</p>
                         <a href="https://www.xiaohongshu.com/user/profile/5ec9413b000000000100457b" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -325,5 +359,7 @@
 
     <div class="cursor-glow" aria-hidden="true"></div>
     <script src="js/main.js"></script>
+    <script src="js/projects.js?v=2"></script>
+    <script src="js/scrollbar.js"></script>
 </body>
 </html>

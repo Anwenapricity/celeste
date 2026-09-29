@@ -2,11 +2,16 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href').slice(1);
+        const target = targetId ? document.getElementById(targetId) : null;
         if (target) {
+            let targetTop = 0;
+            for (let element = target; element; element = element.offsetParent) {
+                targetTop += element.offsetTop;
+            }
             window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
+                top: targetTop - document.querySelector('nav').offsetHeight - 20,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
             });
         }
     });
@@ -15,13 +20,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // 导航栏滚动效果
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-        nav.style.padding = '10px 0';
-        nav.style.background = 'rgba(10, 10, 10, 0.95)';
-    } else {
-        nav.style.padding = '20px 0';
-        nav.style.background = 'rgba(10, 10, 10, 0.8)';
-    }
+    nav.classList.toggle('is-scrolled', window.scrollY > 60);
 });
 
 // 表单提交处理
@@ -42,7 +41,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 // 为每个部分添加观察
-document.querySelectorAll('section').forEach(section => {
+document.querySelectorAll('section:not(.hero)').forEach(section => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     section.style.opacity = 0;
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

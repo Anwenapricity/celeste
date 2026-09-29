@@ -779,24 +779,6 @@ footer {
     }
 }
 
-/* 滚动条样式 */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary);
-}
-
 /* 选择文本高亮 */
 ::selection {
     background: rgba(108, 99, 255, 0.3);
