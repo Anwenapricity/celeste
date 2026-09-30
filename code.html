@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/editorial.css">
-    <link rel="stylesheet" href="css/projects.css?v=3">
+    <link rel="stylesheet" href="css/projects.css?v=4">
     <link rel="stylesheet" href="css/scrollbar.css?v=2">
+    <link rel="stylesheet" href="css/photography.css?v=5">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/connect.css?v=6">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -55,103 +58,44 @@
         </div>
     </section>
 
-    <!-- 关于部分 -->
-    <section id="about">
+    <!-- 关于我：个人视角与两个创作方向 -->
+    <section id="about" class="about-editorial" aria-labelledby="about-title">
         <div class="container">
-            <div class="section-title">
-                <h2>关于我</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>你好！我是Celeste，一名算法工程师，同时也是一名热爱光影的摄影师。拥有5年的计算机视觉算法开发经验，痴迷于用代码和镜头两种方式探索视觉世界的美。</p>
-                    <p>我的创作理念是"技术为艺术赋能"。我相信好的摄影作品不仅要有精湛的技术把控，更要有打动人心的情感表达，能够用光影讲述独特的故事。</p>
-                    <p>在工作之余，我喜欢旅行、阅读和尝试新的摄影风格。这些经历不仅丰富了我的生活，也为我的算法研究和摄影创作带来了源源不断的灵感。</p>
-                    <a href="#" class="btn">下载简历</a>
+            <header class="about-masthead"><p class="work-kicker">ABOUT / 关于我</p><span>CELESTE · TWO WAYS OF SEEING</span></header>
+            <div class="about-layout">
+                <div class="about-story">
+                    <p class="about-intro">你好，我是 Celeste。</p>
+                    <h2 id="about-title">理性地理解，<br>感性地记录。</h2>
+                    <div class="about-prose">
+                        <p>算法工程师，也是摄影师。<br>我用代码探索画面背后的规律，也用影像留下值得停留的瞬间。</p>
+                        <p>对我来说，算法与摄影共享着同一份好奇：如何看见细节，又如何理解整个画面。从真实世界到虚拟场景，光影、色彩与构图，都是观察的起点。</p>
+                    </div>
+                    <p class="about-signature"><span>Celeste.</span><span>在代码与光影之间</span></p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <i class="fas fa-code"></i>
-                        <div class="number">5+</div>
-                        <div>年开发经验</div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <div class="number">40+</div>
-                        <div>完成项目</div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-star"></i>
-                        <div class="number">1.2k</div>
-                        <div>GitHub Star</div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-palette"></i>
-                        <div class="number">60+</div>
-                        <div>作品数</div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-user-friends"></i>
-                        <div class="number">3k+</div>
-                        <div>粉丝数</div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-award"></i>
-                        <div class="number">8</div>
-                        <div>获奖荣誉</div>
-                    </div>
+                <div id="skills" class="about-practices" aria-label="探索方向与工具">
+                    <article class="about-practice" aria-labelledby="about-algorithm-title">
+                        <div class="about-practice-label"><span>01 / COMPUTATION</span><span aria-hidden="true">↗</span></div>
+                        <h3 id="about-algorithm-title">算法探索</h3>
+                        <p>从像素出发，关注画面的识别、理解与重建。</p>
+                        <dl class="about-facts">
+                            <div><dt>关注方向</dt><dd>计算机视觉 / 目标检测 / 图像超分辨率</dd></div>
+                            <div><dt>工具与框架</dt><dd>Python / PyTorch / OpenCV</dd></div>
+                        </dl>
+                        <a class="about-direction-link" href="#projects">走进算法项目 <span aria-hidden="true">↗</span></a>
+                    </article>
+                    <article class="about-practice" aria-labelledby="about-photo-title">
+                        <div class="about-practice-label"><span>02 / OBSERVATION</span><span aria-hidden="true">↗</span></div>
+                        <h3 id="about-photo-title">摄影创作</h3>
+                        <p>从光影出发，记录人与风景之间的情绪与联系。</p>
+                        <dl class="about-facts">
+                            <div><dt>画面语言</dt><dd>光影 / 色彩 / 构图</dd></div>
+                            <div><dt>当前影像</dt><dd>虚拟摄影 / 人物与场景 / 同行的片刻</dd></div>
+                        </dl>
+                        <a class="about-direction-link" href="#photography">走进摄影作品 <span aria-hidden="true">↗</span></a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 技能部分 -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>专业技能</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><i class="fas fa-brain"></i> AI / 机器学习</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Python</li>
-                        <li><i class="fas fa-check-circle"></i> PyTorch</li>
-                        <li><i class="fas fa-check-circle"></i> OpenCV</li>
-                        <li><i class="fas fa-check-circle"></i> 模型训练与评估</li>
-                        <li><i class="fas fa-check-circle"></i> Transformer</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-eye"></i> 计算机视觉</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> 目标检测</li>
-                        <li><i class="fas fa-check-circle"></i> 图像分割</li>
-                        <li><i class="fas fa-check-circle"></i> 多模态视觉</li>
-                        <li><i class="fas fa-check-circle"></i> 数据增强</li>
-                        <li><i class="fas fa-check-circle"></i> 推理优化</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-camera"></i> 摄影创作</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> 人像摄影</li>
-                        <li><i class="fas fa-check-circle"></i> 风光摄影</li>
-                        <li><i class="fas fa-check-circle"></i> 后期修图</li>
-                        <li><i class="fas fa-check-circle"></i> 构图与光影</li>
-                        <li><i class="fas fa-check-circle"></i> 视频拍摄</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-gears"></i> 工程与部署</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> ONNX / TensorRT</li>
-                        <li><i class="fas fa-check-circle"></i> Docker</li>
-                        <li><i class="fas fa-check-circle"></i> FastAPI</li>
-                        <li><i class="fas fa-check-circle"></i> Git / GitHub</li>
-                        <li><i class="fas fa-check-circle"></i> GPU 环境管理</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="about-closing"><span>理解画面，也感受画面。</span><span>CODE & LIGHT</span></div>
         </div>
     </section>
 
@@ -160,7 +104,7 @@
         <div class="container">
             <header class="work-heading">
                 <div>
-                    <p class="work-kicker">SELECTED EXPLORATIONS / 01—02</p>
+                    <p class="work-kicker">SELECTED EXPLORATIONS / 01—03</p>
                     <h2 id="work-title">让视觉，被理解。</h2>
                 </div>
                 <p>算法探索 · Computer Vision<br>从识别画面中的目标，到看清被忽略的细节。</p>
@@ -215,151 +159,139 @@
                     </details>
                 </div>
             </article>
-            <p class="work-note">概念展示 / 图片由 AI 生成，检测框与清晰度对比均为视觉示意。真实项目成果待补充。</p>
+            <article class="work-case" aria-labelledby="segmentation-title">
+                <div class="work-media">
+                    <figure class="work-visual segmentation-visual">
+                        <img src="images/projects/segmentation-editorial-v1.png" alt="雨后街景的语义分割概念图：左半为自然画面，右半以紫色、沙金色、绿色与蓝色区分道路、建筑、植被和天空" width="1536" height="1024" loading="lazy" decoding="async">
+                        <figcaption>SEMANTIC SEGMENTATION / CONCEPT</figcaption>
+                        <span class="compare-label compare-label-before">自然画面</span>
+                        <span class="compare-label compare-label-after">分割示意</span>
+                    </figure>
+                    <div class="work-toolbar segmentation-toolbar"><span>场景解析 · AI 概念影像</span><ul class="segmentation-legend" aria-label="语义类别示意"><li><i class="segment-road" aria-hidden="true"></i>道路</li><li><i class="segment-building" aria-hidden="true"></i>建筑</li><li><i class="segment-vegetation" aria-hidden="true"></i>植被</li><li><i class="segment-sky" aria-hidden="true"></i>天空</li></ul></div>
+                </div>
+                <div class="work-copy">
+                    <p class="work-number"><span>03</span> SEGMENTATION</p>
+                    <h3 id="segmentation-title">让每个像素，有所归属。</h3>
+                    <p class="work-description">语义分割 / Semantic Segmentation<br>从识别目标到理解区域，为画面中的像素赋予语义类别。探索道路、建筑与植被之间的边界，让场景结构逐渐清晰。</p>
+                    <ul class="work-tags" aria-label="相关技术"><li>PyTorch</li><li>U-Net</li><li>DeepLabV3+</li><li>Scene Parsing</li></ul>
+                    <details class="work-details">
+                        <summary>关于这项探索</summary>
+                        <p>关注像素级分类、区域边界与场景解析。当前街景及彩色分区均由 AI 生成，作为语义分割的视觉概念示意，并非模型预测或精确标注；真实项目、模型与评估结果将在后续补充。</p>
+                    </details>
+                </div>
+            </article>
+            <p class="work-note">概念展示 / 图片由 AI 生成，检测框、清晰度对比与语义分区均为视觉示意。真实项目成果待补充。</p>
         </div>
     </section>
 
-    <section id="photography" aria-label="摄影作品集">
+    <section id="photography" class="photo-section" aria-labelledby="photo-title">
         <div class="container">
-                <div class="project-card photo-holding">
-                    <div class="project-image photography-placeholder">
-                        <span>PHOTOGRAPHY</span>
-                        <small>摄影作品集 · 即将呈现</small>
-                    </div>
-                    <div class="project-content">
-                        <h3>摄影作品集</h3>
-                        <p>人像与风光摄影作品合集，涵盖构图、光影把控与后期调色的完整创作流程展示。</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Lightroom</span>
-                            <span class="tech-tag">Photoshop</span>
-                            <span class="tech-tag">人像修图</span>
-                            <span class="tech-tag">风光摄影</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 预览</a>
-                            <a href="#"><i class="fab fa-github"></i> 代码</a>
-                        </div>
-                    </div>
+            <header class="photo-heading">
+                <div><p class="work-kicker">VISUAL JOURNAL / PHOTOGRAPHY</p><h2 id="photo-title">把瞬间，留给光影。</h2></div>
+                <p>在不同的世界里，寻找同样动人的光。<br>关于陪伴、色彩，以及那些值得停留的片刻。</p>
+            </header>
+            <div class="photo-series"><span>01 / FEATURED · 精选影像</span><span>虚拟摄影 · 原神 / 05</span></div>
+            <figure class="photo-feature">
+<a class="photo-link" href="images/photography/selected/20260314172351.png" data-title="月下同行" data-caption="星夜 · 双人取景 / 原神 · 虚拟摄影" aria-label="放大查看：月下同行"><img src="images/photography/selected/20260314172351.png" alt="蓝色星空与月光下，两位角色站在山巅" width="2560" height="1440" loading="lazy" decoding="async"><span class="photo-open" aria-hidden="true">↗</span></a>
+                <figcaption><p class="photo-index">Featured / 01</p><h3>月下同行</h3><p>让天空多留一点。<br>让同行的人，成为画面的重心。</p><span class="photo-category">星夜 / 陪伴 / 留白</span></figcaption>
+            </figure>
+            <div class="photo-grid">
+                <figure><a class="photo-link" href="images/photography/selected/20250302114908.png" data-title="把黄昏留住" data-caption="暖光 · 双人取景 / 原神 · 虚拟摄影" aria-label="放大查看：把黄昏留住"><img src="images/photography/selected/20250302114908.png" alt="夕阳映照树林，两位角色并肩坐在岩石上" width="2560" height="1440" loading="lazy" decoding="async"><span class="photo-open" aria-hidden="true">↗</span></a><figcaption><h3>把黄昏留住</h3><span>02 / 暖光 · 双人取景</span></figcaption></figure>
+                <figure><a class="photo-link" href="images/photography/selected/20250302123530.png" data-title="海风来信" data-caption="晴日 · 人物取景 / 原神 · 虚拟摄影" aria-label="放大查看：海风来信"><img src="images/photography/selected/20250302123530.png" alt="蓝天海岸边，两位角色在木屋旁交谈" width="2560" height="1440" loading="lazy" decoding="async"><span class="photo-open" aria-hidden="true">↗</span></a><figcaption><h3>海风来信</h3><span>03 / 晴日 · 人物取景</span></figcaption></figure>
+                <figure><a class="photo-link" href="images/photography/selected/20260118142256.png" data-title="暮色里的队列" data-caption="群像 · 场景取景 / 原神 · 虚拟摄影" aria-label="放大查看：暮色里的队列"><img src="images/photography/selected/20260118142256.png" alt="暖色暮光中的广场，五位小小的角色排列站立" width="2560" height="1440" loading="lazy" decoding="async"><span class="photo-open" aria-hidden="true">↗</span></a><figcaption><h3>暮色里的队列</h3><span>04 / 群像 · 场景取景</span></figcaption></figure>
+                <figure><a class="photo-link" href="images/photography/selected/20260927204848.png" data-title="冰蓝的凝望" data-caption="冷光 · 人物特写 / 原神 · 虚拟摄影" aria-label="放大查看：冰蓝的凝望"><img src="images/photography/selected/20260927204848.png" alt="冰蓝色背景前，戴着冠饰的角色正面肖像" width="2560" height="1440" loading="lazy" decoding="async"><span class="photo-open" aria-hidden="true">↗</span></a><figcaption><h3>冰蓝的凝望</h3><span>05 / 冷光 · 人物特写</span></figcaption></figure>
+            </div>
+            <div class="photo-screening" role="region" aria-roledescription="轮播" aria-labelledby="screening-title">
+                <div class="photo-series"><span>02 / SCREENING ROOM · 放映室</span><span>A story in five frames</span></div>
+                <header class="screening-heading"><p class="photo-index">Screening / 02</p><h3 id="screening-title">与你同行。</h3><p class="screening-intro">从日落到星夜，<br>把沿途的光，与你分享。</p><span class="photo-category">日落 / 同行 / 星夜</span></header>
+                <div class="screening-stage">
+                    <a class="photo-link screening-slide is-current" href="images/photography/together/20230702163441.png" data-title="海与花的晚霞" data-caption="花海 · 落日 / 与你同行 · 原神" aria-label="放大查看：海与花的晚霞" >
+                        <img src="images/photography/together/20230702163441.png" alt="两位角色并肩坐在发光花丛中，眺望粉紫色海上晚霞" width="2560" height="1440" loading="lazy" decoding="async">
+                        <span class="photo-open" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="photo-link screening-slide" href="images/photography/together/20230702163952.png" data-title="等一场金色日落" data-caption="山野 · 暖光 / 与你同行 · 原神" aria-label="放大查看：等一场金色日落" inert aria-hidden="true">
+                        <img src="images/photography/together/20230702163952.png" alt="两位角色在山坡木舟中眺望金色夕阳与远山" width="2560" height="1440" loading="lazy" decoding="async">
+                        <span class="photo-open" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="photo-link screening-slide" href="images/photography/together/20260314165300.png" data-title="晚风停在秋千上" data-caption="秋千 · 陪伴 / 与你同行 · 原神" aria-label="放大查看：晚风停在秋千上" inert aria-hidden="true">
+                        <img src="images/photography/together/20260314165300.png" alt="蓝紫色林间，两位角色坐在挂着星饰的秋千上" width="2560" height="1440" loading="lazy" decoding="async">
+                        <span class="photo-open" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="photo-link screening-slide" href="images/photography/together/20260314171233.png" data-title="向晴空远行" data-caption="晴空 · 远望 / 与你同行 · 原神" aria-label="放大查看：向晴空远行" inert aria-hidden="true">
+                        <img src="images/photography/together/20260314171233.png" alt="蓝发角色站在高处，远望蓝天、白云和山峦" width="2560" height="1440" loading="lazy" decoding="async">
+                        <span class="photo-open" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="photo-link screening-slide" href="images/photography/together/20260314171713.png" data-title="夜色里的合影" data-caption="星夜 · 双人 / 与你同行 · 原神" aria-label="放大查看：夜色里的合影" inert aria-hidden="true">
+                        <img src="images/photography/together/20260314171713.png" alt="蓝色夜空与建筑前，两位角色并肩合影" width="2560" height="1440" loading="lazy" decoding="async">
+                        <span class="photo-open" aria-hidden="true">↗</span>
+                    </a>
                 </div>
+                <div class="screening-progress" aria-hidden="true"><span></span></div>
+                <div class="screening-bar">
+                    <div class="screening-caption"><span class="screening-count">01 / 05</span><div><h4 class="screening-name">海与花的晚霞</h4><p class="screening-detail">花海 · 落日 / 与你同行 · 原神</p></div></div>
+                    <div class="screening-controls"><button type="button" class="screening-prev" aria-label="放映上一张">←</button><button type="button" class="screening-play" aria-label="暂停自动放映">暂停放映 Ⅱ</button><button type="button" class="screening-next" aria-label="放映下一张">→</button></div>
+                </div>
+                <p class="screening-status" role="status"></p>
+                <div class="screening-filmstrip" aria-label="选择放映作品">
+                    <button class="screening-thumb" type="button" aria-label="放映第 1 张：海与花的晚霞" aria-pressed="true"><img src="images/photography/together/20230702163441.png" alt="" width="2560" height="1440" loading="lazy"><span>01</span></button>
+                    <button class="screening-thumb" type="button" aria-label="放映第 2 张：等一场金色日落" aria-pressed="false"><img src="images/photography/together/20230702163952.png" alt="" width="2560" height="1440" loading="lazy"><span>02</span></button>
+                    <button class="screening-thumb" type="button" aria-label="放映第 3 张：晚风停在秋千上" aria-pressed="false"><img src="images/photography/together/20260314165300.png" alt="" width="2560" height="1440" loading="lazy"><span>03</span></button>
+                    <button class="screening-thumb" type="button" aria-label="放映第 4 张：向晴空远行" aria-pressed="false"><img src="images/photography/together/20260314171233.png" alt="" width="2560" height="1440" loading="lazy"><span>04</span></button>
+                    <button class="screening-thumb" type="button" aria-label="放映第 5 张：夜色里的合影" aria-pressed="false"><img src="images/photography/together/20260314171713.png" alt="" width="2560" height="1440" loading="lazy"><span>05</span></button>
+                </div>
+            </div>
+            <div class="photo-footer"><span>以游戏内取景，记录虚拟世界的光影。</span><span>点击影像，进入大图浏览 ↗</span></div>
         </div>
     </section>
 
-    <!-- 频道部分 -->
-    <section id="channels">
-        <div class="container">
-            <div class="section-title">
-                <h2>我的频道</h2>
-            </div>
-            <div class="channels-grid">
-                <div class="channel-card">
-                    <div class="channel-icon douyin">
-                        <i class="fab fa-tiktok"></i>
-                    </div>
-                    <div class="channel-content">
-                        <h3>抖音</h3>
-                        <p>分享摄影技巧与后期修图短视频</p>
-                        <a href="https://www.douyin.com/user/MS4wLjABAAAAw6_Jq4rDqlUKujFUvw0mjwTE8Y4uYuqJoKIQWO43oBYTd5_FlhU3qZ-PbOS7MP35?from_tab_name=main" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="channel-card">
-                    <div class="channel-icon bilibili">
-                        <i class="fab fa-bilibili"></i>
-                    </div>
-                    <div class="channel-content">
-                        <h3>哔哩哔哩</h3>
-                        <p>摄影教程与作品完整创作流程</p>
-                        <a href="https://space.bilibili.com/1340190821" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="channel-card">
-                    <div class="channel-icon xiaohongshu">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="channel-content">
-                        <h3>小红书</h3>
-                        <p>摄影作品展示与创作心得图文分享</p>
-                        <a href="https://www.xiaohongshu.com/user/profile/5ec9413b000000000100457b" class="channel-link" target="_blank" rel="noopener noreferrer">前往关注 <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+    <dialog id="photo-viewer" class="photo-viewer" aria-labelledby="photo-viewer-title">
+        <div class="photo-viewer-top"><p>CELESTE / VISUAL JOURNAL</p><button class="photo-viewer-close" type="button" aria-label="关闭大图" autofocus>×</button></div>
+        <div class="photo-viewer-stage">
+            <button class="photo-prev" type="button" aria-label="上一张">←</button>
+            <div class="photo-viewer-image-wrap"><img class="photo-viewer-image" alt="" hidden><p class="photo-viewer-status" role="status">载入影像…</p></div>
+            <button class="photo-next" type="button" aria-label="下一张">→</button>
+        </div>
+        <div class="photo-viewer-bottom"><div aria-live="polite"><h3 id="photo-viewer-title"></h3><p class="photo-viewer-caption"></p></div><span class="photo-viewer-hint">← → 切换 · ESC 关闭</span><span class="photo-viewer-count"></span></div>
+    </dialog>
+
+    <!-- 频道与联系：使用现有主页链接 -->
+    <section id="channels" class="channels-editorial" aria-labelledby="channels-title">
+        <div class="container channels-layout">
+            <header class="channels-heading"><p class="work-kicker">ELSEWHERE / 我的频道</p><h2 id="channels-title">在别处，继续相遇。</h2><p>代码与光影之外，<br>也留一些空间，分享日常。</p></header>
+            <div class="channel-entries">
+                    <a class="channel-entry channel-douyin" href="https://www.douyin.com/user/MS4wLjABAAAAw6_Jq4rDqlUKujFUvw0mjwTE8Y4uYuqJoKIQWO43oBYTd5_FlhU3qZ-PbOS7MP35?from_tab_name=main" target="_blank" rel="noopener noreferrer" aria-label="访问抖音主页（新标签页）"><span class="channel-badge" aria-hidden="true"><img src="images/icons/douyin.svg" alt="" width="32" height="32"></span><div><h3>抖音<span>DOUYIN</span></h3><p><span class="channel-format">短视频</span>在动态影像里相遇</p></div><span class="channel-action"><span class="channel-action-label">访问主页</span><span class="channel-arrow" aria-hidden="true">↗</span></span></a>
+                    <a class="channel-entry channel-bilibili" href="https://space.bilibili.com/1340190821" target="_blank" rel="noopener noreferrer" aria-label="访问哔哩哔哩主页（新标签页）"><span class="channel-badge" aria-hidden="true"><img src="images/icons/bilibili.svg" alt="" width="32" height="32"></span><div><h3>哔哩哔哩<span>BILIBILI</span></h3><p><span class="channel-format">视频社区</span>换一个窗口，继续探索</p></div><span class="channel-action"><span class="channel-action-label">访问主页</span><span class="channel-arrow" aria-hidden="true">↗</span></span></a>
+                    <a class="channel-entry channel-xiaohongshu" href="https://www.xiaohongshu.com/user/profile/5ec9413b000000000100457b" target="_blank" rel="noopener noreferrer" aria-label="访问小红书主页（新标签页）"><span class="channel-badge" aria-hidden="true"><img src="images/icons/xiaohongshu.svg" alt="" width="32" height="32"></span><div><h3>小红书<span>XIAOHONGSHU</span></h3><p><span class="channel-format">图文社区</span>让片刻，留在日常里</p></div><span class="channel-action"><span class="channel-action-label">访问主页</span><span class="channel-arrow" aria-hidden="true">↗</span></span></a>
             </div>
         </div>
     </section>
 
-    <!-- 联系部分 -->
-    <section id="contact">
+    <section id="contact" class="contact-editorial" aria-labelledby="contact-title">
         <div class="container">
-            <div class="section-title">
-                <h2>联系我</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info">
-                            <h3>邮箱</h3>
-                            <p>celeste@gmail.com</p>
-                        </div>
+            <p class="work-kicker">GET IN TOUCH / 联系我</p>
+            <div class="contact-layout">
+                <div class="contact-message"><h2 id="contact-title">让好奇，<br>成为对话的开始。</h2><p>关于算法的想法，关于影像的灵感，<br>或只是想聊聊某个动人的瞬间。<br>欢迎来打个招呼。</p></div>
+                <div class="contact-invitation">
+                    <div class="contact-details-heading"><span>CONTACT DETAILS</span><span class="contact-placeholder-label">示例信息 · 待更新</span></div>
+                    <div class="contact-details">
+                        <div class="contact-detail-row"><span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><dl><dt>邮箱 <span>EMAIL</span></dt><dd>hello@example.com</dd></dl></div>
+                        <div class="contact-detail-row"><span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><dl><dt>位置 <span>LOCATION</span></dt><dd>中国 · 城市待填写</dd></dl></div>
+                        <div class="contact-detail-row"><span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 3 2 5-3 2a14 14 0 0 0 7 7l2-3 5 2v4c0 1-1 2-2 1C10 21 3 14 3 5c0-1 1-2 2-2Z"/></svg></span><dl><dt>电话 <span>PHONE</span></dt><dd>+86 1XX XXXX XXXX</dd></dl></div>
                     </div>
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info">
-                            <h3>位置</h3>
-                            <p>China, Hubei, Wuhan</p>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <div class="info">
-                            <h3>电话</h3>
-                            <p>+86 123 4567 8900</p>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-clock"></i>
-                        <div class="info">
-                            <h3>工作时间</h3>
-                            <p>周一至周五, 9:00 - 18:00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">您的姓名</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">您的邮箱</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">消息内容</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">发送消息</button>
-                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-dribbble"></i></a>
-            </div>
-            <p class="copyright">© 2023 Celeste. All rights reserved. Designed with ❤️ and code.</p>
-        </div>
+    <footer class="site-footer">
+        <div class="container footer-layout"><a class="footer-signature" href="#home" aria-label="Celeste 返回首页">Celeste.</a><p>© 2026 Celeste <span>代码与光影之间</span></p><div class="footer-actions"><div class="footer-platforms" role="group" aria-label="外部平台"><a class="footer-platform" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub 首页（新标签页）" title="GitHub"><img src="images/icons/github.svg" alt="" width="20" height="20"></a><a class="footer-platform" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT 首页（新标签页）" title="ChatGPT"><img src="images/icons/chatgpt.svg" alt="" width="20" height="20"></a></div><a class="footer-top" href="#home">回到顶部 <span aria-hidden="true">↑</span></a></div></div>
     </footer>
 
     <div class="cursor-glow" aria-hidden="true"></div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2"></script>
     <script src="js/projects.js?v=2"></script>
     <script src="js/scrollbar.js"></script>
+    <script src="js/photography.js?v=2"></script>
+    <script src="js/screening.js"></script>
 </body>
 </html>

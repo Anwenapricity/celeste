@@ -23,13 +23,6 @@ window.addEventListener('scroll', function() {
     nav.classList.toggle('is-scrolled', window.scrollY > 60);
 });
 
-// 表单提交处理
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('感谢您的留言！在实际应用中，这里会将表单数据发送到服务器。');
-    this.reset();
-});
-
 // 滚动显示动画
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
