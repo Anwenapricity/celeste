@@ -40,12 +40,12 @@
 .contact-details dt span { margin-left: 10px; color: #777e8c; font-size: 9px; letter-spacing: .12em; }
 .contact-details dd { margin-top: 5px; color: #ddd7ce; font-size: 15px; letter-spacing: .03em; overflow-wrap: anywhere; }
 .site-footer { background: #131519; padding: 0; border: 0; text-align: left; }
-.site-footer > .footer-layout { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding-block: 27px; position: relative; }
+.site-footer > .footer-layout { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 28px; padding-block: 27px; position: relative; }
 .footer-layout::before { content: ''; position: absolute; top: 0; left: 64px; right: 64px; border-top: 1px solid #ffffff20; }
-.footer-signature { font: italic 26px Georgia, serif; color: #d2ccc1; text-decoration: none; }
-.footer-layout p { font-size: 10px; color: #858995; letter-spacing: .04em; }
+.footer-signature { justify-self: start; font: italic 26px Georgia, serif; color: #d2ccc1; text-decoration: none; }
+.footer-layout p { text-align: center; font-size: 10px; color: #858995; letter-spacing: .04em; }
 .footer-layout p span { margin-left: 20px; }
-.footer-actions { display: flex; align-items: center; gap: 26px; }
+.footer-actions { justify-self: end; display: flex; align-items: center; gap: 26px; }
 .footer-platforms { display: flex; align-items: center; gap: 8px; padding-right: 22px; border-right: 1px solid #ffffff20; }
 .footer-platform { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; opacity: .6; transition: opacity .2s, background .2s; }
 .footer-platform img { display: block; width: 20px; height: 20px; filter: invert(1); }

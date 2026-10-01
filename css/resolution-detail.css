@@ -1,0 +1,21 @@
+/* Same source and crop geometry on both sides; no model output is implied. */
+.texture-study { margin-top: 48px; padding-top: 28px; border-top: 1px solid #ffffff20; --crop-x: -110%; --crop-y: -10%; }
+.texture-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 23px; }
+.texture-heading h3 { font-size: 21px; font-weight: 400; margin-top: 12px; }
+.texture-regions { display: flex; gap: 6px; border: 0; }
+.texture-regions legend { font-size: 10px; color: #96929e; margin-bottom: 10px; }
+.texture-regions label { position: relative; cursor: pointer; }
+.texture-regions input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
+.texture-regions span { display: block; border: 1px solid #ffffff20; padding: 7px 17px; color: #9d99a7; font-size: 11px; transition: color .2s, background .2s; }
+.texture-regions input:checked + span { color: #dfd5c5; background: #baa99214; border-color: #baa99270; }
+.texture-regions input:focus-visible + span { outline: 1px solid #ddd1be; outline-offset: 3px; }
+.texture-study:has(input[value="wood"]:checked) { --crop-x: -92%; --crop-y: -130%; }
+.texture-study:has(input[value="window"]:checked) { --crop-x: -195%; --crop-y: -135%; }
+.texture-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.texture-crop { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: #20252b; border: 1px solid #ffffff15; }
+.texture-crop img { position: absolute; width: 300%; height: 300%; max-width: none; left: var(--crop-x); top: var(--crop-y); }
+.texture-crop-soft img { filter: blur(5px); }
+.texture-pair figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: #b7b1bf; font-size: 11px; }
+.texture-pair figcaption span:last-child { color: #807d8b; font-size: 9px; letter-spacing: .1em; }
+.texture-note { font-size: 10px; color: #84828e; line-height: 1.9; margin-top: 18px; }
+@media (prefers-reduced-motion: reduce) { .texture-regions span { transition: none; } }

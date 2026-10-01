@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celeste 的目标检测概念展示：从像素到感知，探索城市街景中的目标定位与类别识别。">
+    <title>从像素，到感知。 · Celeste</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+    <link rel="stylesheet" href="../css/projects.css?v=5">
+    <link rel="stylesheet" href="../css/connect.css?v=7">
+    <link rel="stylesheet" href="../css/scrollbar.css?v=2">
+    <link rel="stylesheet" href="../css/project-detail.css?v=1">
+</head>
+<body class="project-page" id="top">
+    <nav aria-label="项目导航">
+        <div class="container">
+            <a class="logo" href="../code.html#home" aria-label="Celeste 首页">Celeste<span class="logo-dot">.</span></a>
+            <div class="nav-links"><a href="#experiment">交互展示</a><a href="#approach">技术过程</a><a href="../code.html#projects">返回项目列表 ↗</a></div>
+        </div>
+    </nav>
+    <main class="detail-container">
+        <header class="detail-opening">
+            <div class="detail-eyebrow"><span>ALGORITHM EXPLORATION / 01</span><span class="concept-badge">CONCEPT STUDY · 概念展示</span></div>
+            <div class="detail-title-row">
+                <div><p class="detail-english">Object Detection</p><h1>从像素，<br>到感知<span>。</span></h1></div>
+                <div class="detail-intro"><p>一条街道，无数细节。<br>让画面中的目标，拥有清晰的边界。</p><p>从车辆到行人，探索机器如何定位目标、区分类别，并将识别结果转化为可读的视觉语言。</p><a class="detail-text-link" href="#experiment">进入交互展示 <span aria-hidden="true">↓</span></a></div>
+            </div>
+            <dl class="detail-metadata"><div><dt>领域 / FIELD</dt><dd>计算机视觉 · 目标检测</dd></div><div><dt>候选技术 / TOOLKIT</dt><dd>Python · PyTorch · YOLO · OpenCV</dd></div><div><dt>当前阶段 / STATUS</dt><dd>视觉原型 · 真实资料待补充</dd></div></dl>
+        </header>
+
+        <section class="detail-experiment" id="experiment" aria-labelledby="experiment-title">
+            <header class="detail-section-heading"><p class="work-kicker">01 / VISUAL EXPERIMENT</p><h2 id="experiment-title">看见目标，也看见场景。</h2></header>
+            <div class="detail-demo-layout">
+                <div class="work-media">
+                    <figure class="work-visual">
+                        <img src="../images/projects/detection-editorial-v1.png" alt="AI 生成的雨后城市街景，车辆与行人的位置叠加手工检测框示意" width="1536" height="1024" fetchpriority="high">
+                        <figcaption>URBAN SCENE / CONCEPT</figcaption>
+                        <div class="detection-box detection-car" data-label="CAR" aria-hidden="true"></div>
+                        <div class="detection-box detection-person-one" data-label="PERSON" aria-hidden="true"></div>
+                        <div class="detection-box detection-person-two" data-label="PERSON" aria-hidden="true"></div>
+                        <div class="detection-box detection-car-back" data-label="CAR" aria-hidden="true"></div>
+                    </figure>
+                    <div class="work-toolbar"><span>雨后街景 · AI 概念影像</span><label><input class="detection-toggle" type="checkbox" checked aria-describedby="demo-note">显示检测框示意</label></div>
+                </div>
+                <aside class="detail-observation" aria-label="画面说明">
+                    <p class="detail-aside-label">READING THE SCENE</p><h3>从一个画面，<br>读出不同角色。</h3>
+                    <ul class="detail-legend"><li><i class="legend-car" aria-hidden="true"></i><span>车辆 <small>CAR</small></span><span>02</span></li><li><i class="legend-person" aria-hidden="true"></i><span>行人 <small>PERSON</small></span><span>02</span></li></ul>
+                    <p class="detail-annotation">切换检测框，在完整街景与目标边界之间观察。两种颜色区分车辆与行人，数字表示画面中手工示意框的数量。</p>
+                    <p class="detail-demo-note" id="demo-note">图片由 AI 生成，检测框为手工布置。此处用于预览展示样式，并非模型推理结果。</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="detail-approach" id="approach" aria-labelledby="approach-title">
+            <header class="detail-section-heading detail-heading-split"><div><p class="work-kicker">02 / THE APPROACH</p><h2 id="approach-title">从输入，到理解。</h2></div><p>目标检测的一般处理路径。<br>具体实现将随真实项目资料补充。</p></header>
+            <ol class="detail-process">
+                <li><div class="process-top"><span>01</span><span aria-hidden="true">→</span></div><p class="process-label">INPUT</p><h3>准备画面</h3><p>读取图像，处理尺寸与输入格式，为后续识别准备一致的视觉输入。</p><span class="process-foot">图像读取 / 预处理</span></li>
+                <li><div class="process-top"><span>02</span><span aria-hidden="true">→</span></div><p class="process-label">PERCEPTION</p><h3>定位与识别</h3><p>通过检测模型预测目标的位置与类别，并对候选结果进行筛选。</p><span class="process-foot">模型推理 / 结果筛选</span></li>
+                <li><div class="process-top"><span>03</span><span aria-hidden="true">↗</span></div><p class="process-label">OUTPUT</p><h3>让结果可读</h3><p>将目标框与类别映射回原始画面，让识别结果能够被直观地观察与分析。</p><span class="process-foot">坐标映射 / 可视化</span></li>
+            </ol>
+        </section>
+
+        <section class="detail-evidence" aria-labelledby="evidence-title">
+            <div><p class="work-kicker">03 / BEYOND THE DEMO</p><h2 id="evidence-title">让探索，<br>有据可循。</h2><p>视觉先行，结果随后。<br>这里为真实项目的过程与成果留一个位置。</p></div>
+            <dl class="detail-evidence-list"><div><dt><span>01</span> 场景与数据</dt><dd>后续补充任务背景、数据来源与标注范围。</dd></div><div><dt><span>02</span> 实验与评估</dt><dd>后续展示准确性、速度与典型误检案例。</dd></div><div><dt><span>03</span> 代码与复现</dt><dd>后续提供代码仓库、环境说明与运行方式。</dd></div></dl>
+        </section>
+        <div class="detail-next"><a href="../code.html#projects">← 全部算法探索</a><a class="detail-next-project" href="resolution.html"><span>继续浏览 · 项目 02</span><strong>让细节，重新浮现。</strong><span aria-hidden="true">↗</span></a></div>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><a class="footer-signature" href="../code.html#home">Celeste.</a><p>© 2026 Celeste <span>代码与光影之间</span></p><div class="footer-actions"><div class="footer-platforms" role="group" aria-label="外部平台"><a class="footer-platform" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub 首页（新标签页）" title="GitHub"><img src="../images/icons/github.svg" alt="" width="20" height="20"></a><a class="footer-platform" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT 首页（新标签页）" title="ChatGPT"><img src="../images/icons/chatgpt.svg" alt="" width="20" height="20"></a></div><a class="footer-top" href="#top">回到顶部 <span aria-hidden="true">↑</span></a></div></div></footer>
+    <script src="../js/main.js?v=2"></script>
+    <script src="../js/scrollbar.js"></script>
+</body>
+</html>

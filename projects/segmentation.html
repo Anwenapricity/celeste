@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celeste 的语义分割概念展示：通过类别筛选与分区叠加，观察街景的空间结构。">
+    <title>让每个像素，有所归属。 · Celeste</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+    <link rel="stylesheet" href="../css/projects.css?v=5">
+    <link rel="stylesheet" href="../css/connect.css?v=7">
+    <link rel="stylesheet" href="../css/scrollbar.css?v=2">
+    <link rel="stylesheet" href="../css/project-detail.css?v=1">
+    <link rel="stylesheet" href="../css/segmentation-detail.css?v=1">
+</head>
+<body class="project-page" id="top">
+    <nav aria-label="项目导航">
+        <div class="container">
+            <a class="logo" href="../code.html#home" aria-label="Celeste 首页">Celeste<span class="logo-dot">.</span></a>
+            <div class="nav-links"><a href="#experiment">交互展示</a><a href="#approach">技术过程</a><a href="../code.html#projects">返回项目列表 ↗</a></div>
+        </div>
+    </nav>
+    <main class="detail-container">
+        <header class="detail-opening">
+            <div class="detail-eyebrow"><span>ALGORITHM EXPLORATION / 03</span><span class="concept-badge">CONCEPT STUDY · 概念展示</span></div>
+            <div class="detail-title-row">
+                <div><p class="detail-english">Semantic Segmentation</p><h1>让每个像素，<br>有所归属<span>。</span></h1></div>
+                <div class="detail-intro"><p>从看见一个目标，<br>到读懂一整个场景。</p><p>道路、建筑、植被与天空，在同一幅画面中相互衔接。以颜色标示区域，探索像素与语义之间的关系。</p><a class="detail-text-link" href="#experiment">进入交互展示 <span aria-hidden="true">↓</span></a></div>
+            </div>
+            <dl class="detail-metadata"><div><dt>领域 / FIELD</dt><dd>计算机视觉 · 语义分割</dd></div><div><dt>候选技术 / TOOLKIT</dt><dd>PyTorch · U-Net · DeepLabV3+</dd></div><div><dt>当前阶段 / STATUS</dt><dd>视觉原型 · 真实资料待补充</dd></div></dl>
+        </header>
+
+        <section class="detail-experiment" id="experiment" aria-labelledby="experiment-title">
+            <header class="detail-section-heading"><p class="work-kicker">01 / VISUAL EXPERIMENT</p><h2 id="experiment-title">用颜色，读懂空间。</h2></header>
+            <div class="detail-demo-layout semantic-demo">
+                <div class="work-media">
+                    <figure class="work-visual semantic-visual">
+                        <img src="../images/projects/detection-editorial-v1.png" alt="AI 生成的雨后街景，可叠加道路、建筑、植被和天空的手工分区示意" width="1536" height="1024" fetchpriority="high">
+                        <svg class="semantic-overlay" viewBox="0 0 1000 666.667" aria-hidden="true" focusable="false">
+                            <defs><mask id="semantic-exclusions"><rect width="1000" height="667" fill="white"/><path fill="black" d="M46 369 L52 350 94 336 124 325 184 325 220 336 254 355 334 368 350 378 350 412 329 422 268 432 243 428 224 416 116 416 94 424 74 415 49 399 Z M462 328 L469 308 484 300 494 303 497 318 494 357 507 389 513 399 504 404 491 399 480 372 470 394 457 402 451 397 464 366 Z M642 335 L651 320 657 311 668 312 670 325 666 337 674 370 678 391 694 407 686 412 677 406 660 383 654 409 642 415 644 402 649 373 639 359 Z M555 333 L560 322 570 316 595 316 603 327 611 334 610 353 603 358 562 358 555 351 Z"/></mask></defs>
+                            <g mask="url(#semantic-exclusions)">
+                                <path class="semantic-region semantic-sky" d="M472 0 H870 V214 L832 235 778 225 737 235 716 223 680 230 661 174 650 229 602 231 584 216 573 232 549 205 531 234 522 222 525 125 510 82 Z"/>
+                                <path class="semantic-region semantic-building" d="M0 0 H472 L490 30 494 79 510 83 525 123 523 326 498 335 358 353 302 361 0 360 Z M870 0 H1000 V450 L949 428 929 397 886 382 870 326 Z"/>
+                                <path class="semantic-region semantic-road" d="M0 434 L356 373 512 346 555 338 609 337 724 341 729 394 745 426 780 441 1000 476 V667 H0 Z"/>
+                                <path class="semantic-region semantic-vegetation" d="M685 182 L680 163 694 161 691 143 707 157 719 127 736 136 747 119 762 133 767 75 780 96 792 80 807 101 817 67 825 109 851 115 847 140 867 149 860 171 877 181 870 201 850 221 834 236 831 262 814 264 807 286 791 262 782 285 777 317 771 315 773 267 757 258 742 240 732 248 714 225 731 211 709 209 716 190 Z"/>
+                            </g>
+                        </svg>
+                        <figcaption>SCENE PARSING / HAND-DRAWN CONCEPT</figcaption>
+                    </figure>
+                    <div class="work-toolbar"><span>雨后街景 · AI 概念影像</span><label><input id="semantic-visible" type="checkbox" checked>显示分区示意</label></div>
+                </div>
+                <aside class="detail-observation" aria-label="分区控制">
+                    <p class="detail-aside-label">LAYERS OF A SCENE</p><h3>一个场景，<br>多种语义。</h3>
+                    <fieldset class="semantic-categories"><legend>选择显示的类别</legend>
+                        <label><input type="checkbox" value="road" checked><i class="segment-road" aria-hidden="true"></i><span>道路 <small>ROAD</small></span></label>
+                        <label><input type="checkbox" value="building" checked><i class="segment-building" aria-hidden="true"></i><span>建筑 <small>BUILDING</small></span></label>
+                        <label><input type="checkbox" value="vegetation" checked><i class="segment-vegetation" aria-hidden="true"></i><span>植被 <small>VEGETATION</small></span></label>
+                        <label><input type="checkbox" value="sky" checked><i class="segment-sky" aria-hidden="true"></i><span>天空 <small>SKY</small></span></label>
+                    </fieldset>
+                    <div class="semantic-opacity"><label for="semantic-opacity">叠加不透明度 <output id="semantic-opacity-value" for="semantic-opacity">45%</output></label><input id="semantic-opacity" type="range" min="10" max="80" value="45" aria-describedby="demo-note"></div>
+                    <p class="detail-demo-note" id="demo-note">AI 街景 + 手工绘制的粗略分区，仅作交互示意。边界未经精确标注，车辆、行人与远景等未纳入这四类，不代表模型输出。</p>
+                </aside>
+            </div>
+            <div class="semantic-caption"><span>取消全部类别可查看原图；重新勾选即可恢复分区。</span><span>04 CLASSES / CONCEPT ONLY</span></div>
+        </section>
+
+        <section class="detail-approach" id="approach" aria-labelledby="approach-title">
+            <header class="detail-section-heading detail-heading-split"><div><p class="work-kicker">02 / THE APPROACH</p><h2 id="approach-title">从画面，到语义。</h2></div><p>语义分割的一般处理路径。<br>具体实现将随真实项目资料补充。</p></header>
+            <ol class="detail-process">
+                <li><div class="process-top"><span>01</span><span aria-hidden="true">→</span></div><p class="process-label">INPUT</p><h3>准备画面</h3><p>整理场景图像与类别体系，统一输入尺寸，并准备像素级标注。</p><span class="process-foot">类别定义 / 数据准备</span></li>
+                <li><div class="process-top"><span>02</span><span aria-hidden="true">→</span></div><p class="process-label">SEGMENTATION</p><h3>理解每个区域</h3><p>提取局部细节与场景上下文，为像素预测类别，并恢复空间分辨率。</p><span class="process-foot">特征编码 / 像素分类</span></li>
+                <li><div class="process-top"><span>03</span><span aria-hidden="true">↗</span></div><p class="process-label">OUTPUT</p><h3>呈现与评估</h3><p>将类别映射为色彩，结合真实标注检查区域覆盖与边界，分析易混淆的场景。</p><span class="process-foot">分区可视化 / 误差分析</span></li>
+            </ol>
+        </section>
+
+        <section class="detail-evidence" aria-labelledby="evidence-title">
+            <div><p class="work-kicker">03 / BEYOND THE DEMO</p><h2 id="evidence-title">让探索，<br>有据可循。</h2><p>视觉先行，结果随后。<br>这里为真实项目的过程与成果留一个位置。</p></div>
+            <dl class="detail-evidence-list"><div><dt><span>01</span> 场景与数据</dt><dd>后续补充场景来源、类别定义与像素标注规范。</dd></div><div><dt><span>02</span> 实验与评估</dt><dd>后续展示区域重叠指标、边界效果与类别混淆案例。</dd></div><div><dt><span>03</span> 代码与复现</dt><dd>后续提供代码仓库、环境说明与运行方式。</dd></div></dl>
+        </section>
+        <div class="detail-next"><a href="resolution.html">← 上一项 · 超分辨率</a><a class="detail-next-project" href="../code.html#projects"><span>BACK TO EXPLORATIONS</span><strong>回到算法探索。</strong><span aria-hidden="true">↗</span></a></div>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><a class="footer-signature" href="../code.html#home">Celeste.</a><p>© 2026 Celeste <span>代码与光影之间</span></p><div class="footer-actions"><div class="footer-platforms" role="group" aria-label="外部平台"><a class="footer-platform" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub 首页（新标签页）" title="GitHub"><img src="../images/icons/github.svg" alt="" width="20" height="20"></a><a class="footer-platform" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT 首页（新标签页）" title="ChatGPT"><img src="../images/icons/chatgpt.svg" alt="" width="20" height="20"></a></div><a class="footer-top" href="#top">回到顶部 <span aria-hidden="true">↑</span></a></div></div></footer>
+    <script src="../js/segmentation-detail.js?v=1"></script>
+    <script src="../js/main.js?v=2"></script>
+    <script src="../js/scrollbar.js"></script>
+</body>
+</html>

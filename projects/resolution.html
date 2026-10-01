@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celeste 的超分辨率概念展示：通过清晰度对比与局部放大，观察建筑的轮廓和纹理。">
+    <title>让细节，重新浮现。 · Celeste</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+    <link rel="stylesheet" href="../css/projects.css?v=5">
+    <link rel="stylesheet" href="../css/connect.css?v=7">
+    <link rel="stylesheet" href="../css/scrollbar.css?v=2">
+    <link rel="stylesheet" href="../css/project-detail.css?v=1">
+    <link rel="stylesheet" href="../css/resolution-detail.css?v=1">
+</head>
+<body class="project-page" id="top">
+    <nav aria-label="项目导航">
+        <div class="container">
+            <a class="logo" href="../code.html#home" aria-label="Celeste 首页">Celeste<span class="logo-dot">.</span></a>
+            <div class="nav-links"><a href="#experiment">交互展示</a><a href="#approach">技术过程</a><a href="../code.html#projects">返回项目列表 ↗</a></div>
+        </div>
+    </nav>
+    <main class="detail-container">
+        <header class="detail-opening">
+            <div class="detail-eyebrow"><span>ALGORITHM EXPLORATION / 02</span><span class="concept-badge">CONCEPT STUDY · 概念展示</span></div>
+            <div class="detail-title-row">
+                <div><p class="detail-english">Super Resolution</p><h1>让细节，<br>重新浮现<span>。</span></h1></div>
+                <div class="detail-intro"><p>一片屋檐，一扇暖窗。<br>在细微之处，重新发现画面的质感。</p><p>从瓦片的边缘到木纹的走向，观察清晰度与纹理如何影响视觉感受，探索图像重建的表达方式。</p><a class="detail-text-link" href="#experiment">进入交互展示 <span aria-hidden="true">↓</span></a></div>
+            </div>
+            <dl class="detail-metadata"><div><dt>领域 / FIELD</dt><dd>计算机视觉 · 图像超分辨率</dd></div><div><dt>候选技术 / TOOLKIT</dt><dd>PyTorch · ESRGAN · Image Processing</dd></div><div><dt>当前阶段 / STATUS</dt><dd>视觉原型 · 真实资料待补充</dd></div></dl>
+        </header>
+
+        <section class="detail-experiment" id="experiment" aria-labelledby="experiment-title">
+            <header class="detail-section-heading"><p class="work-kicker">01 / VISUAL EXPERIMENT</p><h2 id="experiment-title">在清晰与朦胧之间。</h2></header>
+            <div class="detail-demo-layout">
+                <div class="work-media">
+                    <figure class="work-visual comparison">
+                        <img src="../images/projects/texture-editorial-v1.png" alt="瓦片屋檐与暖色木窗的 AI 概念影像" width="1536" height="1024" fetchpriority="high">
+                        <div class="compare-soft" aria-hidden="true"><img src="../images/projects/texture-editorial-v1.png" alt="" width="1536" height="1024"></div>
+                        <figcaption>TEXTURE STUDY / CONCEPT</figcaption>
+                        <span class="compare-label compare-label-before">柔化示意</span><span class="compare-label compare-label-after">清晰素材</span>
+                        <span class="compare-line" aria-hidden="true"></span>
+                        <input class="compare-control" type="range" min="0" max="100" step="any" value="50" aria-label="调整清晰度对比位置" aria-describedby="demo-note">
+                    </figure>
+                    <div class="work-toolbar"><span>建筑细节 · AI 概念影像</span><span>↔ 拖动分界线，或使用方向键</span></div>
+                </div>
+                <aside class="detail-observation" aria-label="对比说明">
+                    <p class="detail-aside-label">READING THE TEXTURE</p><h3>轮廓之外，<br>还有细节的温度。</h3>
+                    <ul class="detail-legend"><li><span>左侧 <small>SOFTENED</small></span><span>柔化</span></li><li><span>右侧 <small>ORIGINAL</small></span><span>素材</span></li></ul>
+                    <p class="detail-annotation">沿着屋檐移动分界线，观察边缘与纹理的视觉变化。下方可进一步放大同一位置，比较局部细节。</p>
+                    <p class="detail-demo-note" id="demo-note">两侧使用同一张 AI 图片，左侧仅加入柔化效果。此处不是低分辨率输入与模型重建结果，也不代表实际性能。</p>
+                </aside>
+            </div>
+            <div class="texture-study">
+                <div class="texture-heading"><div><p class="detail-aside-label">A CLOSER LOOK / 局部观察</p><h3>把目光，留在细节上。</h3></div>
+                    <fieldset class="texture-regions"><legend>选择观察区域</legend><label><input type="radio" name="texture-region" value="roof" checked><span>屋檐</span></label><label><input type="radio" name="texture-region" value="wood"><span>木纹</span></label><label><input type="radio" name="texture-region" value="window"><span>暖窗</span></label></fieldset>
+                </div>
+                <div class="texture-pair">
+                    <figure><div class="texture-crop texture-crop-soft"><img src="../images/projects/texture-editorial-v1.png" alt="当前选定区域的柔化局部" width="1536" height="1024" loading="lazy"></div><figcaption><span>柔化示意</span><span>SOFTENED / 3× VIEW</span></figcaption></figure>
+                    <figure><div class="texture-crop"><img src="../images/projects/texture-editorial-v1.png" alt="当前选定区域的清晰素材局部" width="1536" height="1024" loading="lazy"></div><figcaption><span>清晰素材</span><span>ORIGINAL / 3× VIEW</span></figcaption></figure>
+                </div>
+                <p class="texture-note">两侧始终展示同一区域。3× 仅表示相对于完整画面的视图放大倍率，并非模型超分倍率。</p>
+            </div>
+        </section>
+
+        <section class="detail-approach" id="approach" aria-labelledby="approach-title">
+            <header class="detail-section-heading detail-heading-split"><div><p class="work-kicker">02 / THE APPROACH</p><h2 id="approach-title">从轮廓，到纹理。</h2></div><p>图像超分辨率的一般处理路径。<br>具体实现将随真实项目资料补充。</p></header>
+            <ol class="detail-process">
+                <li><div class="process-top"><span>01</span><span aria-hidden="true">→</span></div><p class="process-label">INPUT</p><h3>准备画面</h3><p>整理低分辨率图像，明确退化方式与目标尺寸，为重建提供一致的输入。</p><span class="process-foot">输入整理 / 退化分析</span></li>
+                <li><div class="process-top"><span>02</span><span aria-hidden="true">→</span></div><p class="process-label">RESTORATION</p><h3>重建与恢复</h3><p>由重建模型估计更高分辨率的图像，关注边缘、纹理与整体结构的协调。</p><span class="process-foot">特征提取 / 图像重建</span></li>
+                <li><div class="process-top"><span>03</span><span aria-hidden="true">↗</span></div><p class="process-label">OUTPUT</p><h3>观察与评估</h3><p>结合参考图像与局部细节进行比较，评估视觉质量，并检查伪影与纹理偏差。</p><span class="process-foot">局部对比 / 质量评估</span></li>
+            </ol>
+        </section>
+
+        <section class="detail-evidence" aria-labelledby="evidence-title">
+            <div><p class="work-kicker">03 / BEYOND THE DEMO</p><h2 id="evidence-title">让探索，<br>有据可循。</h2><p>视觉先行，结果随后。<br>这里为真实项目的过程与成果留一个位置。</p></div>
+            <dl class="detail-evidence-list"><div><dt><span>01</span> 场景与数据</dt><dd>后续补充应用场景、图像来源与退化设定。</dd></div><div><dt><span>02</span> 实验与评估</dt><dd>后续展示重建质量、耗时与典型伪影案例。</dd></div><div><dt><span>03</span> 代码与复现</dt><dd>后续提供代码仓库、环境说明与运行方式。</dd></div></dl>
+        </section>
+        <div class="detail-next"><a href="detection.html">← 上一项 · 目标检测</a><a class="detail-next-project" href="segmentation.html"><span>继续浏览 · 项目 03</span><strong>让每个像素，有所归属。</strong><span aria-hidden="true">↗</span></a></div>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><a class="footer-signature" href="../code.html#home">Celeste.</a><p>© 2026 Celeste <span>代码与光影之间</span></p><div class="footer-actions"><div class="footer-platforms" role="group" aria-label="外部平台"><a class="footer-platform" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub 首页（新标签页）" title="GitHub"><img src="../images/icons/github.svg" alt="" width="20" height="20"></a><a class="footer-platform" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT 首页（新标签页）" title="ChatGPT"><img src="../images/icons/chatgpt.svg" alt="" width="20" height="20"></a></div><a class="footer-top" href="#top">回到顶部 <span aria-hidden="true">↑</span></a></div></div></footer>
+    <script src="../js/projects.js?v=2"></script>
+    <script src="../js/main.js?v=2"></script>
+    <script src="../js/scrollbar.js"></script>
+</body>
+</html>

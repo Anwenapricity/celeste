@@ -31,6 +31,8 @@
 .work-description { color: #afb0b8; font-size: 13px; line-height: 2; max-width: 370px; }
 .work-tags { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 24px 0; padding: 0; list-style: none; color: #c4bece; font-size: 10px; letter-spacing: .04em; }
 .work-details { border-top: 1px solid #ffffff25; }
+.work-case-link { display: inline-flex; align-items: center; gap: 40px; margin: 0 0 24px; padding-bottom: 9px; border-bottom: 1px solid #baad9466; color: #d7cbb9; font-size: 12px; text-decoration: none; }
+.work-case-link:hover { color: #eeeae4; border-color: #d7cbb9; }
 .work-details summary { padding: 17px 0; cursor: pointer; font-size: 12px; letter-spacing: .06em; color: #ddd8e2; display: flex; justify-content: space-between; gap: 20px; list-style: none; }
 .work-details summary::-webkit-details-marker { display: none; }
 .work-details summary::after { content: '+'; font-size: 18px; line-height: 1; color: #aaa2c7; }
