@@ -23,6 +23,8 @@
 .photo-grid h3 { font-weight: 400; font-size: 15px; letter-spacing: .08em; }
 .photo-grid figcaption span { color: #92949f; font-size: 10px; letter-spacing: .07em; }
 .photo-footer { display: flex; justify-content: space-between; gap: 24px; margin-top: 36px; padding-top: 21px; border-top: 1px solid #ffffff20; color: #90949f; font-size: 11px; line-height: 1.8; }
+.photo-gallery-link { color: #cfc1ad; text-decoration: none; border-bottom: 1px solid #cfc1ad66; padding-bottom: 4px; }
+.photo-gallery-link:hover { color: #eeeae4; border-color: #eeeae4; }
 .photo-viewing { overflow: hidden; scrollbar-gutter: stable; }
 .photo-viewer { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 24px 38px; border: 0; background: #0b0d11; color: #eeeae4; }
 .photo-viewer::backdrop { background: #0b0d11f5; }

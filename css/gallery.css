@@ -1,0 +1,43 @@
+/* Preserve full frames. Visual rhythm comes from column widths and whitespace. */
+html { scroll-behavior: smooth; }
+.gallery-page { background: #131519; }
+.gallery-page nav { background: #131519ed; }
+.gallery-container { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
+.gallery-intro { padding: 150px 0 58px; }
+.gallery-eyebrow { display: flex; justify-content: space-between; gap: 24px; color: #9e96af; font-size: 10px; letter-spacing: .17em; }
+.gallery-title-row { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 70px; margin-top: 47px; }
+.gallery-script { font: italic 22px Georgia, serif; color: #807d8b; margin-bottom: 20px; }
+.gallery-title-row h1 { font-size: clamp(48px, 5vw, 68px); font-weight: 400; line-height: 1.4; letter-spacing: .08em; }
+.gallery-intro-copy { padding-bottom: 9px; }
+.gallery-intro-copy p { color: #aaa6b0; font-size: 14px; line-height: 2.1; }
+.gallery-intro-copy > span { display: block; font-size: 10px; letter-spacing: .2em; color: #89818f; margin-top: 28px; }
+.gallery-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 25px; border-top: 1px solid #ffffff22; padding: 24px 0 32px; scroll-margin-top: 100px; }
+.gallery-filters { display: flex; gap: 26px; }
+.gallery-filters[hidden] { display: none; }
+.gallery-filters button { background: none; border: 0; border-bottom: 1px solid transparent; padding: 6px 0; color: #8e8a99; font-size: 12px; cursor: pointer; transition: color .2s, border-color .2s; }
+.gallery-filters button[aria-pressed="true"] { color: #e1d5c4; border-color: #baa992; }
+.gallery-filters button:hover { color: #eeeae4; }
+.gallery-filters button:focus-visible { outline: 1px solid #ddd1bf; outline-offset: 5px; }
+.gallery-total { margin-left: auto; color: #827c8c; font-size: 10px; letter-spacing: .08em; }
+.gallery-collection { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 60px 32px; align-items: center; }
+.gallery-card { grid-column: span 6; min-width: 0; }
+.gallery-card:nth-child(4n+1), .gallery-card:nth-child(4n+4) { grid-column: span 7; }
+.gallery-card:nth-child(4n+2), .gallery-card:nth-child(4n+3) { grid-column: span 5; }
+.gallery-collection.is-filtered .gallery-card { grid-column: span 6; }
+.gallery-card[hidden] { display: none; }
+.gallery-card.is-revealed { animation: gallery-arrive .6s ease both; }
+@keyframes gallery-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.gallery-hover { position: absolute; inset: auto 0 0; padding: 28px 18px 16px; display: flex; justify-content: space-between; gap: 15px; background: linear-gradient(transparent, #0b0d11c9); color: #eeeae4; font-size: 12px; opacity: 0; transition: opacity .25s; pointer-events: none; }
+.gallery-photo:hover .gallery-hover, .gallery-photo:focus-visible .gallery-hover { opacity: 1; }
+.gallery-card figcaption { display: flex; align-items: baseline; gap: 13px; padding-top: 16px; }
+.gallery-index { font: italic 15px Georgia, serif; color: #827b8d; }
+.gallery-card h2 { font-size: 14px; font-weight: 400; color: #d3cdd6; letter-spacing: .08em; }
+.gallery-tags { margin-left: auto; font-size: 9px; color: #88818f; }
+.gallery-end { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin: 80px 0 0; border-top: 1px solid #ffffff20; padding: 30px 0 60px; }
+.gallery-end > span { color: #888391; font-size: 10px; line-height: 1.9; }
+.gallery-end p { font: italic 23px Georgia, serif; color: #96909f; }
+.gallery-end a { color: #c2b49e; font-size: 11px; text-decoration: none; }
+.gallery-viewer-actions { display: flex; align-items: center; gap: 16px; }
+.gallery-viewer .gallery-ui-toggle { width: auto; border-radius: 24px; padding: 0 17px; font-size: 11px; }
+.gallery-viewer.is-quiet .photo-viewer-top > p, .gallery-viewer.is-quiet .photo-viewer-bottom, .gallery-viewer.is-quiet .photo-prev, .gallery-viewer.is-quiet .photo-next { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .gallery-card.is-revealed { animation: none; } .gallery-hover, .gallery-filters button { transition: none; } }
