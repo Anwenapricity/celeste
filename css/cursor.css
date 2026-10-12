@@ -1,0 +1,54 @@
+/* Warm-white lens marks: no fill, glow, photo tint or replacement cursor. */
+.focus-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 1100;
+    pointer-events: none;
+    color: #eeeae4;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+.focus-cursor.is-visible { opacity: 1; }
+.focus-cursor span, .focus-cursor i { position: absolute; pointer-events: none; }
+.focus-cursor-ring {
+    width: 30px;
+    height: 30px;
+    left: -15px;
+    top: -15px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: .36;
+    transition: transform .22s ease, opacity .22s ease;
+}
+.focus-cursor-frame {
+    left: -26px;
+    top: -26px;
+    width: 52px;
+    height: 52px;
+    opacity: 0;
+    transform: scale(.65);
+    transition: transform .25s ease, opacity .2s ease;
+}
+.focus-cursor-frame i { width: 10px; height: 10px; border: 0 solid currentColor; }
+.focus-cursor-frame i:nth-child(1) { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.focus-cursor-frame i:nth-child(2) { top: 0; right: 0; border-width: 1px 1px 0 0; }
+.focus-cursor-frame i:nth-child(3) { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+.focus-cursor-frame i:nth-child(4) { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+.focus-cursor-plus { opacity: 0; transition: opacity .2s ease; }
+.focus-cursor-plus::before, .focus-cursor-plus::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+}
+.focus-cursor-plus::before { width: 7px; height: 1px; left: -3px; top: 0; }
+.focus-cursor-plus::after { width: 1px; height: 7px; left: 0; top: -3px; }
+.focus-cursor[data-mode="action"] .focus-cursor-ring { transform: scale(.65); opacity: .7; }
+.focus-cursor[data-mode="photo"] .focus-cursor-ring { transform: scale(1.5); opacity: 0; }
+.focus-cursor[data-mode="photo"] .focus-cursor-frame { transform: scale(1); opacity: .8; }
+.focus-cursor[data-mode="photo"] .focus-cursor-plus { opacity: .75; }
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+    .focus-cursor { display: none; }
+}
